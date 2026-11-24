@@ -1,0 +1,8 @@
+<form action="/clientes/<%= cliente._id%>/editar" method="POST">
+    <input type="text" name="nome" value="<%= cliente.nome %>">
+    <input type="text" name="cpf" value="<%= cliente.cpf %>">
+    <input type="text" name="rg" value="<%= cliente.rg %>">
+    <input type="text" name="endereco" value="<%= cliente.endereco %>">
+    <input type="text" name="profissao" value="<%= cliente.profissao%>">
+    <button type="submit">Salvar</button>
+</form>

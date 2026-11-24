@@ -2,7 +2,13 @@
 <ul>
     <% clientes.forEach(cliente => { %> 
     <li><%= cliente.nome %> (<%= cliente.cpf %> <%=cliente.profissao %>)</li>
-    <% }) %>
+
+    <form action="/clientes/<%= cliente._id %>/excluir" method="POST">
+    <button type="submit">Excluir</button>
+    </form> <a href="/clientes/<%= cliente._id %>/editar">Editar</a>
+
+        <% }) %>
+
 </ul>
 
 <a href="/clientes/novo">Novo cliente</a>
