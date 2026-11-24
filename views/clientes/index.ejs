@@ -1,0 +1,8 @@
+<h1> Clientes </h1>
+<ul>
+    <% clientes.forEach(cliente => { %> 
+    <li><%= cliente.nome %> (<%= cliente.cpf %> <%=cliente.profissao %>)</li>
+    <% }) %>
+</ul>
+
+<a href="/clientes/novo">Novo cliente</a>

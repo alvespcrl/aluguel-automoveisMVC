@@ -4,7 +4,7 @@ const Cliente = require('../models/Cliente');
 exports.listar = async (req, res) => {
     try {
         const clientes = await Cliente.find();
-        res.json(clientes);
+        res.render('clientes/index', {clientes});
     } catch (err) {
         res.status(500).json({ erro: err.message });
     }
@@ -13,12 +13,11 @@ exports.listar = async (req, res) => {
 exports.criar = async (req, res) => {
     try {
         const clientes = await Cliente.create(req.body);
-        res.json(clientes, (201));
+        res.redirect('/clientes');
     } catch (err) {
         res.json(400).json({ erro: err.message });
     }
 };
-
 
 exports.buscar = async (req, res) => {
     try {
@@ -32,7 +31,6 @@ exports.buscar = async (req, res) => {
     }
 };
 
-
 exports.atualizar = async (req, res) => {
     try {
         const clientes = await Cliente.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
@@ -45,7 +43,6 @@ exports.atualizar = async (req, res) => {
     }
 };
 
-
 exports.excluir = async (req, res) => {
     try {
         const clientes = await Cliente.findByIdAndDelete(req.params.id);
@@ -57,3 +54,8 @@ exports.excluir = async (req, res) => {
         res.status(400).json({ erro: err.message });
     }
 };
+
+exports.formNovo = (req, res) => {
+    res.render('clientes/novo');
+};
+

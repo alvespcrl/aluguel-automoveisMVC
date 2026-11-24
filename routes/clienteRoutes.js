@@ -3,6 +3,7 @@ const router = express.Router();
 const clienteController = require('../controllers/clienteController');
 
 router.get('/', clienteController.listar);
+router.get('/novo', clienteController.formNovo);
 router.get('/:id', clienteController.buscar);
 router.put('/:id', clienteController.atualizar);
 router.post('/', clienteController. criar);

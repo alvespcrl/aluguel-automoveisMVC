@@ -4,6 +4,7 @@ const clienteRoutes = require('./routes/clienteRoutes');
 const express = require('express');
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended: true }));
 app.use('/clientes', clienteRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
