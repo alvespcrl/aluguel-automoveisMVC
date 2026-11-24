@@ -1,0 +1,18 @@
+<h1> Automoveis </h1>
+<ul>
+    <% automoveis.forEach(automovel => { %>
+        <li>
+            <%= automovel.marca %> <%= automovel.modelo %>
+            (<%= automovel.ano %>, placa <%= automovel.placa %>)
+            - <%= automovel.proprietarioTipo %>: <%= automovel.proprietarioNome %>
+
+            <a href="/automoveis/<%= automovel._id %>/editar">Editar</a>
+
+            <form action="/automoveis/<%= automovel._id %>/excluir" method="POST" style="display:inline">
+                <button type="submit">Excluir</button>
+            </form>
+        </li>
+    <% }) %>
+</ul>
+
+<a href="/automoveis/novo">Novo Automovel</a>

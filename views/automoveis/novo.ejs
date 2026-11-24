@@ -1,0 +1,15 @@
+<form action="/automoveis" method="POST">
+    <input type="text" placeholder="Marca" name="marca">
+    <input type="text" placeholder="modelo" name="modelo">
+    <input type="number" placeholder="ano" name="ano">
+    <input type="text" placeholder="Placa" name="placa">
+    <input type="text" placeholder="Matricula" name="matricula">
+    <select name="proprietarioTipo" placeholder="Escolha o tipo" required>
+        <option value="cliente">Cliente</option>
+        <option value="empresa">Empresa</option>
+        <option value="banco">Banco</option>
+    </select>
+    <input type="text" placeholder="Nome Proprietario" name="proprietarioNome">
+
+    <button type="submit">Salvar</button>
+</form>

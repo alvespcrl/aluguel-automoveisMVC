@@ -1,0 +1,15 @@
+<form action="/automoveis/<%= automovel._id%>/editar" method="POST">
+    <input type="text" name="marca" value="<%= automovel.marca %>">
+    <input type="text" name="modelo" value="<%= automovel.modelo %>">
+    <input type="number" name="ano" value="<%= automovel.ano %>">
+    <input type="text" name="placa" value="<%= automovel.placa %>">
+    <input type="text" name="matricula" value="<%= automovel.matricula%>">
+    <input type="text" name="proprietarioNome" value="<%= automovel.proprietarioNome%>">
+    <select name="proprietarioTipo" required>
+        <option value="cliente" <%=automovel.proprietarioTipo==='cliente' ? 'selected' : '' %>>Cliente</option>
+        <option value="empresa" <%=automovel.proprietarioTipo==='empresa' ? 'selected' : '' %>>Empresa</option>
+        <option value="banco" <%=automovel.proprietarioTipo==='banco' ? 'selected' : '' %>>Banco</option>
+    </select>
+    
+    <button type="submit">Salvar</button>
+</form>

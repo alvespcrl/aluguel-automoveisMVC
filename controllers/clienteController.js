@@ -11,7 +11,7 @@ exports.listar = async (req, res) => {
 
 exports.criar = async (req, res) => {
     try {
-        const clientes = await Cliente.create(req.body);
+        const cliente = await Cliente.create(req.body);
         res.redirect('/clientes');
     } catch (err) {
         res.status(400).json({ erro: err.message });
